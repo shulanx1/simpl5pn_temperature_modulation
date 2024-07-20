@@ -8,7 +8,7 @@ Created on Sat Nov  4 21:34:22 2023
 
 import sys
 import os
-wd = 'E:\\Code\\simplified_l5pn' # working directory
+wd = 'E:\\Code\\simpl5pn_temperature_modeulation' # working directory
 sys.path.insert(1, wd)
 
 import numpy as np
@@ -26,6 +26,7 @@ from numpy.random import RandomState
 from datetime import date
 from datetime import datetime
 import scipy.io as sio
+
 
 
 from func.l5_biophys import *
@@ -294,8 +295,9 @@ def vclamp_nad_test(dt, freq = 11, dist = np.asarray([10.0,20.0,30.0]), temp = n
             plt.subplot(1,len(dist),i+1)
             plt.plot(t, G_nad[i+len(dist),:], color = colors[1])
             plt.plot(t, G_nad[i,:], color = colors[0])
-        # plt.xlim([100,1200])
+        plt.xlim([100,2100])
         plt.show()
+    return t, G_nad
 
 
 def vclamp_nad_test_w_noise(dt, freq = 11, dist = 10.0, N = np.asarray([2e3,2e4,2e5]), pulse_width = 5, v_init = -70.0, tau = 1, if_plot = 1):
