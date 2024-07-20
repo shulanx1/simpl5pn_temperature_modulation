@@ -23,23 +23,26 @@
 * [5] nad
 
 ### ion channels gates ###
-* na
+* na <br />
 [0] na_m <br />
 [1] na_h <br />
-* kv
+* kv <br />
 [2] kv_m<br />
-* Im
+* Im <br />
 [3] Im_m<br />
-* ca
+* ca <br />
 [4] ca_m <br />
 [5] ca_h <br />
-* kca
+* kca <br />
 [6] kca_m <br />
-* nad
+* nad <br />
 [7] nad_O1<br />
 [8] nad_C1<br />
 [9] nad_I1<br />
 [10] nad_I2<br />
-* ca dynamic
+* ca dynamic <br />
 [11] cai<br />
  
+
+### contact ###
+For any questions, please contact kjayant@purdue.edu.
