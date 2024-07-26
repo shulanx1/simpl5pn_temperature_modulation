@@ -319,7 +319,7 @@ class CModel:
         v[:, 0] = v_0
         gates = np.zeros((12, M, len(t)))
         channels = [na(v[:, 0], temp = temp), kv(v[:, 0], temp = temp), im(v[:, 0], temp = temp) ,ca(v[:, 0], temp = temp), kca(v[:, 0], temp = temp), nad(v_0, dist = dist, N = N, temp = temp),CaDynamics_E2()]
-        # channels = [na(v[:, 0], temp = temp), kv(v[:, 0], temp = temp), im(v[:, 0], temp = temp) ,ca(v[:, 0], temp = temp), kca(v[:, 0], temp = temp), nad(v_0, dist = dist, N = N),CaDynamics_E2()]
+        # channels = [na(v[:, 0], temp = temp), kv(v[:, 0], temp = temp), im(v[:, 0], temp = temp) ,ca(v[:, 0], temp = temp), kca(v[:, 0], temp = temp), nad(v_0, dist = dist, N = N, temp = 34.0),CaDynamics_E2()]
         gates[0] = np.zeros((M, len(t)))  # na_m
         gates[1] = np.zeros((M, len(t)))  # na_h
         gates[0, :, 0] = channels[0].m

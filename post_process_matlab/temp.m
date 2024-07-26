@@ -1,7 +1,7 @@
 close all
 clear all
 
-datapath = 'E:\Code\simplified_l5pn\results\temp_mod';
+datapath = 'E:\data\simulation\temperature_modulation\temp_mod_somatic';
 files = dir(datapath);
 
 
@@ -46,12 +46,12 @@ burst_cool(dist_cool<=21) = [];
 fr_cool(dist_cool<=21) = [];
 isi_cool(dist_cool<=21,:) = [];
 isi_warm(dist_warm<=21,:) = [];
-addpath(genpath(fullfile(pwd,'GeneSetAnalysisMatlab')))
-color = 'redbluedark';
-cmap = custom_cmap(color);
- 
-boxplot_pairwise([burst_cool', burst_warm'], cmap([1,100],:))
-% boxplot_with_datapoint({fr_cool, fr_warm}, cmap([1,100],:))
+% addpath(genpath(fullfile(pwd,'GeneSetAnalysisMatlab')))
+% color = 'redbluedark';
+% cmap = custom_cmap(color);
+cmap = colormap(parula);
+boxplot_pairwise([burst_cool', burst_warm'], cmap([1,end],:));
+boxplot_pairwise([fr_cool', fr_warm'], cmap([1,end],:))
 
 isi_cool = isi_cool/5;
 isi_warm = isi_warm/5;
@@ -63,8 +63,8 @@ er.Color = cmap(1,:);
 er.LineStyle = 'none';  
 
 figure
-bar(edges(1:end-1)+(edges(2)-edges(1))/2,mean(isi_warm),'FaceColor','None','EdgeColor', cmap(100,:),'LineWidth',1)
+bar(edges(1:end-1)+(edges(2)-edges(1))/2,mean(isi_warm),'FaceColor','None','EdgeColor', cmap(end,:),'LineWidth',1)
 hold on
 er = errorbar(edges(1:end-1)+(edges(2)-edges(1))/2,mean(isi_warm),std(isi_warm)/size(isi_warm,1));
-er.Color = cmap(100,:);                            
+er.Color = cmap(end,:);                            
 er.LineStyle = 'none';  
