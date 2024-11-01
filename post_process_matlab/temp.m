@@ -1,7 +1,9 @@
 close all
 clear all
 
-datapath = 'E:\data\simulation\temperature_modulation\temp_mod_somatic';
+datapath = fullfile(pwd,'stat','Figure5F'); %Figure 5F
+% datapath = fullfile(pwd,'stat','FigureS8D'); %Figure S8D
+% datapath = fullfile(pwd,'stat','FigureS8E'); %Figure S8e
 files = dir(datapath);
 
 
@@ -46,10 +48,10 @@ burst_cool(dist_cool<=21) = [];
 fr_cool(dist_cool<=21) = [];
 isi_cool(dist_cool<=21,:) = [];
 isi_warm(dist_warm<=21,:) = [];
-% addpath(genpath(fullfile(pwd,'GeneSetAnalysisMatlab')))
-% color = 'redbluedark';
-% cmap = custom_cmap(color);
-cmap = colormap(parula);
+addpath(genpath(fullfile(pwd,'GeneSetAnalysisMatlab')))
+color = 'redbluedark';
+cmap = custom_cmap(color);
+% cmap = colormap(parula);
 boxplot_pairwise([burst_cool', burst_warm'], cmap([1,end],:));
 boxplot_pairwise([fr_cool', fr_warm'], cmap([1,end],:))
 
